@@ -1,0 +1,28 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "Learning React by Akshay Saini",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/gaur-lavisha/namaste-react.git)"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Lavisha Gaur",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist": [
+    "last 10 versions"
+  ]
+}

@@ -1,13 +1,90 @@
-Get React into project :
+# Get React into project : (using cdn or using npm)
 
 1. Fetching React library from CDN (copy scripts) - https://legacy.reactjs.org/docs/cdn-links.html
 
-What is CDN ? (https://aws.amazon.com/what-is/cdn/)
-A content delivery network (CDN) is a network of interconnected 
-servers that speeds up webpage loading for data-heavy applications. 
-CDN can stand for content delivery network or content distribution network. 
-When a user visits a website, data from that website's server has to travel a
-cross the internet to reach the user's computer. If the user is located far 
-from that server, it will take a long time to load a large file, such as a video 
-or website image. Instead, the website content is stored on CDN servers geographically 
-closer to the users and reaches their computers much faster.
+# What is CDN ? (https://aws.amazon.com/what-is/cdn/)
+
+# Git Commands :- (Push code on public github repo)
+$ git init
+$ git branch -M main
+$ git add .
+$ git commit -m "fall in love with react"
+
+(To push code on remote github repo from local system)
+$ git remote add origin https://github.com/gaur-lavisha/namaste-react.git
+$ git push origin main
+
+# Command to use npm in project - (package manager)
+https://www.npmjs.com/
+$ npm init 
+
+(Enter following required details)
+package name: (namastereact)
+version: (1.0.0)
+description: Learning React by Akshay Saini 
+entry point: (App.js)
+test command: jest                          
+git repository: (https://github.com/gaur-lavisha/namaste-react.git)
+keywords: react                             
+author: Lavisha Gaur                        
+license: (ISC) (Press Enter)
+
+# package.json - Configuration for npm 
+# bundler - package, used to bundle (after cleaning/compressing/optimizing code) the app so that it can be pushed to production
+# example of bundlers - parcel, webpack, veet etc.
+# create react app uses webpack & babel to build the ready code (making it production ready)
+
+# Install parcel - https://www.npmjs.com/package/parcel
+$ npm install -D parcel 
+
+Note : there are two types of dependencies, one is Dev dependency and other is normal dependency
+Dev dependency - required in development phase where as normal dependency used in production also.
+The main difference between dependencies and dev dependencies is that dependencies are required for an application to run in production, while dev dependencies are only needed for development and testing:
+Dependencies
+These are the packages that are required for an application to run in production. They are automatically installed when you run npm install in your project directory.
+Dev dependencies
+These are the packages that are only needed for local development and testing. They are installed when you run npm install with the -dev flag
+
+# In package.json :
+
+  "devDependencies": {
+    "parcel": "^2.13.0"
+  }
+  
+  In above code, "^" (caret) used in version of parcel
+  "~" (tilde) can also be used in place of caret to automatically upgrade the 
+  version when new version released. 
+
+https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies
+~version : “Approximately equivalent to version”, will automatically update you to all future patch versions that are backwards-compatible, without incrementing the minor version. ~1.2.3 will use releases from 1.2.3 to < 1.3.0.
+^version : “Compatible with version”, will automatically update you to all future minor/patch versions that are backwards-compatible, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to < 2.0.0.
+
+# package-lock.json vs package.json
+
+# transitive dependencies - project has parcel dependency, parcel itself has other dependencies, those dependencies have their dependencies...and so on.
+# code which needn't be pushed (as it can be regenerated) to git repo is placed in .gitignore.
+# npm can install all dependencies (node_modules contain all dependencies/packages required) mentioned in package.json to project.
+
+# To ignite our app : 
+$ npx parcel index.html
+npx - executing a package (i.e. parcel) [to install package we use npm]
+
+2. To install react using npm :
+$ npm install react
+$ npm i react-dom
+
+# parcel - https://parceljs.org/
+
+# To build production ready app :
+$ npx parcel build index.html
+(remove "main": "App.js" in package.json as it defines entry point of application as App.js whereas here in command we are 
+mentioning index.html hence we get error if not removed)
+-> dev build files and prod build files in dist (it can be regenerated so place dist in .gitignore)
+
+# Tell the app, which versions of browsers are compatible with the application
+In package.json,
+"browserslist": [
+    "last 2 Chrome version",
+    "last 2 Firefox version"
+] 
+-> https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z

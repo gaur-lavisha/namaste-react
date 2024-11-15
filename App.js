@@ -1,3 +1,6 @@
+import React from "react"; 
+import ReactDOM from "react-dom/client";
+
 // React.createElement: This is a React method that creates a React element.React elements are the smallest building blocks of React applications, describing what you want to appear on the screen.
 // "h1": The first argument specifies the type of HTML element to create, which in this case is an h1 heading.
 // { id: "head" }: The second argument is an object representing the element’s attributes(or properties).Here, { id: "head" } gives the element an id attribute with the value "head".
